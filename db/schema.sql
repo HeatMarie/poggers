@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS poggers_db;
+CREATE DATABASE poggers_db;

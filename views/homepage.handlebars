@@ -1,0 +1,18 @@
+<!-- Loop over each object in the games array to print on a screen -->
+{{#each games as |game| }}
+
+<div class="row mb-4 game">
+  <div class="col-md-5">
+    <h2>
+      <a href="/game/{{game.id}}">{{game.name}}</a>
+    </h2>
+    <p>Created by {{game.user.name}} on {{format_date game.date_created}}</p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{game.description}}
+    </p>
+  </div>
+</div>
+
+{{/each}}

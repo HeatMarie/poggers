@@ -43,4 +43,4 @@ Games.init(
     }
 );
 
-module.exports = { Games };
+module.exports = Games ;

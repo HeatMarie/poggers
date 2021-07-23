@@ -1,0 +1,21 @@
+<div class="text-left">
+  <h2>{{name}}</h2>
+  <p>{{description}}</p>
+  <p>Created by {{user.name}} on {{format_date date_created}}</p>
+  <p>
+
+{{#each games as |game| }}
+<div class="row mb-4 post">
+  <div class="col-md-5">
+    <p>Created by {{games.user.name}} on {{format_date games.date_created}}</p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{games.title}}
+    </p>
+  </div>
+</div>
+{{/each}}
+<a href="/games/{{id}}"><button class="btn btn-primary">Add Game</button></a>
+</p>
+</div>

@@ -15,7 +15,7 @@ Games.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-                model: 'post',
+                model: 'user',
                 key: 'id'
             }
         },
@@ -23,7 +23,7 @@ Games.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-                model: 'post',
+                model: 'user',
                 key: 'id'
             }
         },
@@ -43,4 +43,4 @@ Games.init(
     }
 );
 
-module.exports = Comment;
+module.exports = Games;

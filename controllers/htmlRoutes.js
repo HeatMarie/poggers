@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
         },
       ],
     });
@@ -33,7 +33,7 @@ router.get('/games/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name']
+          attributes: ['username']
           
         },
       ],
@@ -45,7 +45,7 @@ router.get('/games/:id', async (req, res) => {
       include: [
       {
         model: User,
-        attributes: ['name']
+        attributes: ['username']
         
       },
     ],
@@ -90,7 +90,7 @@ router.get('/tasks/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
           model: Tasks,
           attributes: ['description']
           

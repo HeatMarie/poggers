@@ -1,4 +1,4 @@
-async function newFormHandler(event) {
+async function newGameHandler(event) {
     event.preventDefault();
 
     const title = document.querySelector('#game-name').value;
@@ -20,4 +20,4 @@ async function newFormHandler(event) {
     }
   }
 
-  document.querySelector('.new-game-form').addEventListener('submit', newFormHandler);
+  document.querySelector('.new-game-form').addEventListener('submit', newGameHandler);

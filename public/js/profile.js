@@ -43,4 +43,4 @@ const newFormHandler = async (event) => {
   
   document
     .querySelector('.game-list')
-    .addEventListener('click', delButtonHandler);
+    .addEventListener('click', deleteFormHandler);

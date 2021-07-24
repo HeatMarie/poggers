@@ -2,27 +2,27 @@ const router = require('express').Router();
 const { User } = require('../../models');
 const main = require('../../public/js/mailer');
 
-router.post('/', async (req, res) => {
+router.post('/signup', async (req, res) => {
   try {
     const userData = await User.create(req.body);
-
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
 
-      main.main(username, userEmail);
+      // main.main(username, userEmail);
 
-      res.status(200).json(userData);
+      res.redirect("/");
     });
   } catch (err) {
+    // if error is "uniqueConstraintViolation" then return 400 with "user exists buddy"
+    // else return with "Uhhhh sorry?"
     res.status(400).json(err);
   }
 });
 
 router.post('/login', async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { email: req.body.email } });
-
+    const userData = await User.findOne({ where: { email: req.body.userEmail } });
     if (!userData) {
       res
         .status(400)

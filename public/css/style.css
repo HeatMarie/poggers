@@ -8,16 +8,19 @@
   --theGrey: #ffffffd0;
 }
 
-#login-form, #signup-form, .form-group {
-  margin-top: 25px;
+/* Pogger's heading */
+
+#poggers-heading {
+  margin-top: 10px;
+  margin-left: 15px;
 }
-
-
 
 header,
 .comment:not(:last-child) {
   border-bottom: 1px solid #ccc;
+  width: 100%;
 }
+
 
 .no-button {
   background: none;
@@ -34,3 +37,64 @@ header,
   text-decoration: underline;
 } 
 
+
+
+/* Login CSS */
+
+#login-form, #signup-form, .login-h2 {
+  margin-top: 25px;
+  width: 95%;
+}
+
+
+#login-btn {
+  margin-right: 15px;
+}
+
+
+
+
+/* @medias */ 
+
+
+@media screen and (max-width: 639px) {
+
+  /* Login @ Media */
+
+  .login-h2 {
+    margin-top: 25px;
+    margin-left: 25px;
+  }
+  
+  #login-form, #signup-form {
+    margin-left: 25px;
+    margin-bottom: 30px;
+  }
+}
+
+
+@media screen and (min-width: 640px) {
+
+  /* Login @ Media */
+.login-h2 {
+  margin-top: 25px;
+  margin-left: 50px;
+}
+
+#login-form, #signup-form {
+  margin-left: 50px;
+  margin-bottom: 30px;
+}
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 992px) {
+
+}
+
+@media screen and (min-width: 1200px) {
+
+}

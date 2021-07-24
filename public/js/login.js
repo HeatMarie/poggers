@@ -10,7 +10,6 @@ const loginFormHandler = async (e) => {
             body: JSON.stringify({ userEmail, password }),
             headers: { 'Content-Type': 'application/json' },
         });
-
         if (response.ok) {
             document.location.replace('/profile');
         } else {
@@ -32,7 +31,6 @@ const signupFormHandler = async (e) => {
             body: JSON.stringify({ username, userEmail, password }),
             headers: { 'Content-Type': 'application/json' }, 
         });
-
         if (response.ok) {
             document.location.replace('/profile');
         } else {
@@ -44,3 +42,4 @@ const signupFormHandler = async (e) => {
 document.getElementById('login-form').addEventListener('submit', loginFormHandler);
 
 document.getElementById('signup-form').addEventListener('submit', signupFormHandler);
+

@@ -10,12 +10,17 @@ router.post('/signup', async (req, res) => {
       req.session.logged_in = true;
 
       // main.main(username, userEmail);
-
       res.redirect("/");
     });
   } catch (err) {
-    // if error is "uniqueConstraintViolation" then return 400 with "user exists buddy"
-    // else return with "Uhhhh sorry?"
+    // if (err == UniqueConstraintError) {
+    //   res
+    //     .status(400)
+    //     .json({ message: 'Oi! I think you have been here before!' });
+    // } else {
+    //   res.status(404).json(err);
+    //   return;
+    // }
     res.status(400).json(err);
   }
 });
@@ -36,17 +41,20 @@ router.post('/login', async (req, res) => {
       res
         .status(400)
         .json({ message: 'Incorrect email or password, please try again' });
+      console.log(req, "WE are over here now! MEOW")
       return;
     }
 
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-      
-      res.json({ user: userData, message: 'You are now signed in!' });
-    });
 
+      res.json({ user: userData, message: 'You are now signed in!' });
+      res.status(200);
+    });
+    
   } catch (err) {
+    console.log(req, "WE are over here now! BARK")
     res.status(400).json(err);
   }
 });

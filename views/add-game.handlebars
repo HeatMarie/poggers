@@ -24,28 +24,3 @@
       </div>
     </form>
   </div>
-  
-
-  {{#if games.length}}
-  <div class="col-md-6 game-list">
-    <h3>Current Games:</h3>
-
-    {{#each games as |game|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/game/{{game.id}}">{{game.title}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger game-delete" data-id="{{game.id}}">DELETE</button>
-      </div>
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
-</div>
-
-
-<script src="./js/profile.js"></script>
-<script src="/js/add-game.js"></script>
-<script src="/js/delete-game.js"></script>
-

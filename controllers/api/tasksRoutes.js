@@ -20,7 +20,7 @@ router.post('/:taskid', withAuth, async (req, res) => {
     const newTask = await Tasks.create({
       ...req.body,
       user_id: req.session.user_id,
-      post_id: req.params.taskid
+      task_id: req.params.taskid
     });
     console.log("New", newTask);
     res.status(200).json(newTask);
@@ -39,7 +39,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     });
 
     if (!tasksData) {
-      res.status(404).json({ message: 'Fail! No Tasks here!' });
+      res.status(404).json({ message: 'Sorry! We could not find any tasks this id!' });
       return;
     }
 
@@ -49,4 +49,25 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
+router.put('/:id', withAuth, async (req, res) => {
+  try {
+    const taskUpdate = await Tasks.update({
+      title: req.body.title,
+      task_content: req.body.task_content
+    },
+      {
+        where: {
+          id: req.params.id
+        }
+      });
+
+    if (!taskUpdate) {
+      res.status(404).json({ message: 'Sorry! We could not find any tasks this id!' });
+      return;
+    }
+    res.json(taskUpdate);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 module.exports = router;

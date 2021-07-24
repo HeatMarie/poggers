@@ -1,27 +1,23 @@
 async function deleteFormHandler(event) {
-  event.preventDefault();
+  if (event.target.classList.contains("game-delete")) {
+    event.preventDefault();
 
-  const id = window.location.toString().split('/')[
-    window.location.toString().split('/').length - 1
-  ];
+    const id = event.target.dataset.id;
 
-  const response = await fetch(`/api/games/${id}`, {
-    method: 'DELETE',
-    body: JSON.stringify({
-      games_id: id
-    }),
-    headers: {
-      'Content-Type': 'application/json'
+    const response = await fetch(`/api/games/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+
+      document.location.replace('/profile');
+    } else {
+      alert(response.statusText);
     }
-  });
-
-  if (response.ok) {
-// can change /dashboard to whatever handlebars is
-    document.location.replace('/dashboard/');
-  } else {
-    alert(response.statusText);
   }
-
 }
-// change delete games btn to handlebars matching code
-document.querySelector('.delete-games-btn').addEventListener('click', deleteFormHandler);
+
+document.addEventListener("click", deleteFormHandler);

@@ -1,14 +1,12 @@
 async function newFormHandler(event) {
     event.preventDefault();
-  //change post_game
-    const title = document.querySelector('input[name="post_game"]').value;
-    const post_game = document.querySelector('input[name="post_game"]').value;
+
+    const title = document.querySelector('#game-name').value;
   
     const response = await fetch(`/api/games`, {
       method: 'POST',
       body: JSON.stringify({
-        title,
-        post_game
+        title
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -16,11 +14,10 @@ async function newFormHandler(event) {
     });
   
     if (response.ok) {
-//maybe change dashboard depending on handlebars
-      document.location.replace('/dashboard');
+      document.location.replace('/profile');
     } else {
       alert(response.statusText);
     }
   }
-  //maybe change .new-post-form depending on handlebars
-  document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
+
+  document.querySelector('.new-game-form').addEventListener('submit', newFormHandler);

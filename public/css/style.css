@@ -1,3 +1,19 @@
+:root {
+  --theBlack: #050404;
+  --thePurple: #573280;
+  --theOrange: #FF5642;
+  --theGreen: #9CEC5B;
+  --theBlue: #0EB1D2; 
+  --theWhite: snow; 
+  --theGrey: #ffffffd0;
+}
+
+#login-form, #signup-form, .form-group {
+  margin-top: 25px;
+}
+
+
+
 header,
 .comment:not(:last-child) {
   border-bottom: 1px solid #ccc;
@@ -8,12 +24,13 @@ header,
   border: none;
   padding: 0;
   cursor: pointer;
-  color: #1b89bc;
+  color: var(--theBlue);
   text-decoration: none;
   font-size: 100%;
 }
 
 .no-button:hover {
-  color: #065b83;
+  color: var(--theOrange);
   text-decoration: underline;
-}
+} 
+

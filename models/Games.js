@@ -19,21 +19,10 @@ Games.init(
                 key: 'id'
             }
         },
-        games_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'user',
-                key: 'id'
-            }
+        title: {
+            type:DataTypes.STRING,
+            allowNull:false
         },
-        game_text: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1]
-            }
-        }
     },
     {
         sequelize,
@@ -43,4 +32,4 @@ Games.init(
     }
 );
 
-module.exports = Games ;
+module.exports = Games;

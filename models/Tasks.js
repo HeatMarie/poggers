@@ -11,7 +11,14 @@ Tasks.init(
             primaryKey:true,
             autoincrement:true
         },
-        
+        user_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
+        },
         title:{
             type:DataTypes.STRING,
             allowNull:false
@@ -19,13 +26,6 @@ Tasks.init(
         task_content:{
             type:DataTypes.TEXT,
             allowNull:true,
-        },
-        user_id:{
-            type:DataTypes.INTEGER,
-            references:{
-                model:'user',
-                key:'id'
-            }
         }
     },
     {

@@ -25,7 +25,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     });
 
     if (!gamesData) {
-      res.status(404).json({ message: 'Turn back, you have made a grave mistake!' });
+      res.status(404).json({ message: 'Sorry! We could not find any games this id!' });
       return;
     }
 

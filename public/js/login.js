@@ -1,16 +1,15 @@
 const loginFormHandler = async (e) => {
     e.preventDefault(e);
 
-    const userEmail = document.getElementById('email-login').value.trim();
+    const email = document.getElementById('email-login').value.trim();
     const password = document.getElementById('password-login').value.trim();
 
-    if (userEmail && password) {
-        const response = await fetch('api/users/login', {
+    if (email && password) {
+        const response = await fetch('api/profile/login', {
             method: 'POST',
-            body: JSON.stringify({ userEmail, password }),
+            body: JSON.stringify({ email, password }),
             headers: { 'Content-Type': 'application/json' },
         });
-
         if (response.ok) {
             document.location.replace('/profile');
         } else {
@@ -23,16 +22,15 @@ const signupFormHandler = async (e) => {
     e.preventDefault(e);
     
     const username = document.getElementById('name-signup').value.trim();
-    const userEmail = document.getElementById('email-signup').value.trim();
+    const email = document.getElementById('email-signup').value.trim();
     const password = document.getElementById('password-signup').value.trim();
 
-    if (username && userEmail && password) {
-        const response = await fetch('api/users/login', {
+    if (username && email && password) {
+        const response = await fetch('/api/profile/signup', {
             method: 'POST',
-            body: JSON.stringify({ username, userEmail, password }),
+            body: JSON.stringify({ username, email, password }),
             headers: { 'Content-Type': 'application/json' }, 
         });
-
         if (response.ok) {
             document.location.replace('/profile');
         } else {
@@ -44,3 +42,4 @@ const signupFormHandler = async (e) => {
 document.getElementById('login-form').addEventListener('submit', loginFormHandler);
 
 document.getElementById('signup-form').addEventListener('submit', signupFormHandler);
+

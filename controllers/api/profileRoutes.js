@@ -10,7 +10,7 @@ router.post('/signup', async (req, res) => {
       req.session.logged_in = true;
 
       // main.main(username, userEmail);
-      res.redirect("/");
+      res.redirect("/profile");
     });
   } catch (err) {
     // if (err == UniqueConstraintError) {

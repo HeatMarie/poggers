@@ -1,7 +1,7 @@
 async function taskFormHandler(event) {
   event.preventDefault();
 
-  const id = document.querySelector('#game-desc').value;
+  const id = document.querySelector('#task-desc').value;
   
     const response = await fetch(`/api/tasks/${id}`, {
       method: 'POST',

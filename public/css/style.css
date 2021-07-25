@@ -21,6 +21,11 @@ header,
   width: 100%;
 }
 
+.header-links {
+  width: 100%;
+  margin-left: 50px;
+  margin-right: 5%;
+}
 
 .no-button {
   background: none;
@@ -63,7 +68,7 @@ header,
   width: 90%;
 }
 
-.moveIt {
+.add-game-btn {
   margin-top: 42px;
 }
 

@@ -1,4 +1,4 @@
-async function commentFormHandler(event) {
+async function taskFormHandler(event) {
   event.preventDefault();
 
   const task_content = document.querySelector('textarea[name="task_content]').value.trim();
@@ -27,4 +27,4 @@ async function commentFormHandler(event) {
   }
 }
 //maybe change .task-form depending on handlebars
-document.querySelector('.task-form').addEventListener('submit', taskFormHandler);
+document.querySelector('.task-form').addEventListener('click', taskFormHandler);

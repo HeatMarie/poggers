@@ -1,4 +1,4 @@
-const newGameFormHandler = async (event) => {
+const newFormHandler = async (event) => {
     event.preventDefault();
   
     const username = document.querySelector('#game-name').value.trim();
@@ -21,7 +21,7 @@ const newGameFormHandler = async (event) => {
     }
   };
   
-  const deleteGameFormHandler = async (event) => {
+  const deleteFormHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
   
@@ -39,8 +39,8 @@ const newGameFormHandler = async (event) => {
   
   document
     .querySelector('.new-game-form')
-    .addEventListener('submit', newGameFormHandler);
+    .addEventListener('submit', newFormHandler);
   
   document
     .querySelector('.game-list')
-    .addEventListener('click', deleteGameFormHandler);
+    .addEventListener('click', deleteFormHandler);

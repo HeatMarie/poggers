@@ -21,13 +21,35 @@
 
       <nav>
         <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
+       
+      </nav>
+
+
+<div class="collapse" id="navbarToggleExternalContent">
+  <div class="bg-dark p-4 header-links  justify-right">
+    <div class="text-white h4  justify-right">
+              {{#if logged_in}}
         <a href="/profile">profile</a> |
         <button class="no-button" id="logout">logout</button>
         {{else}}
         <a id="login-btn" href="/login">login</a>
-        {{/if}}
-      </nav>
+        {{/if}} 
+ 
+        | 
+        <a href="/contributorsPage">  contributors</a>
+    </div>
+    <span class="text-muted"></span>
+  </div>
+</div>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+
     </header>
 
     <main class="container container-fluid mt-5">

@@ -1,4 +1,4 @@
-async function deleteFormHandler(event) {
+async function deleteTaskFormHandler(event) {
   event.preventDefault();
 
   const id = window.location.toString().split('/')[
@@ -24,4 +24,4 @@ async function deleteFormHandler(event) {
 
 }
 //maybe change .delete-task-btn based on handlebars
-document.querySelector('.delete-task-btn').addEventListener('click', deleteFormHandler);
+document.querySelector('.delete-task-btn').addEventListener('click', deleteTaskFormHandler);

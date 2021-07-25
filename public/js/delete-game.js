@@ -1,4 +1,4 @@
-async function deleteFormHandler(event) {
+async function deleteGameFormHandler(event) {
   if (event.target.classList.contains("game-delete")) {
     event.preventDefault();
 
@@ -20,4 +20,4 @@ async function deleteFormHandler(event) {
   }
 }
 
-document.addEventListener("click", deleteFormHandler);
+document.addEventListener("click", deleteGameFormHandler);

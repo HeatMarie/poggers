@@ -19,9 +19,20 @@ Tasks.init(
                 key: 'id'
             }
         },
+        game_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'games',
+                key: 'id'
+            },
+        },
         title:{
             type:DataTypes.STRING,
-            allowNull:false
+            allowNull:true
+        },
+        description: {
+            type: DataTypes.STRING
         },
         task_content:{
             type:DataTypes.TEXT,

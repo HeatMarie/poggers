@@ -1,47 +1,21 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{username}}!</h2>
+<div class="text-center">
+  <h2>{{name}}</h2>
+  <p>{{description}}</p>
+  <p>Created by {{user.name}} on {{format_date date_created}}</p>
+  <p>
+
+{{#each tasks as |task| }}
+<div class="row mb-4 post">
+  <div class="col-md-5">
+    <p>Created by {{tasks.user.name}} on {{format_date tasks.date_created}}</p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{tasks.task_content}}
+    </p>
   </div>
 </div>
-
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>What tasks do you need completed?</h3>
-
-    <form class="form new-game-form">
-
-      <div class="form-group">
-        <label for="task-name">Task name:</label>
-        <input class="form-input" type="text" id="task-name" name="task-name" />
-      </div>
-
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Add</button>
-      </div>
-    </form>
-  </div>
-  
-
-  {{#if games.length}}
-  <div class="col-md-6 game-list">
-    <h3>Current Games:</h3>
-
-    {{#each games as |game|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/game/{{game.id}}">{{game.title}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger game-delete" data-id="{{game.id}}">DELETE</button>
-      </div>
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
+{{/each}}
+<a href="/tasks/{{id}}"><button class="btn btn-primary">Add Task</button></a>
+</p>
 </div>
-
-
-<script src="./js/profile.js"></script>
-<script src="/js/add-game.js"></script>
-<script src="/js/delete-game.js"></script>
-

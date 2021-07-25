@@ -3,7 +3,7 @@ async function newGameHandler(event) {
 
     const title = document.querySelector('#game-name').value;
   
-    const response = await fetch(`/api/games`, {
+    const response = await fetch(`/api/game`, {
       method: 'POST',
       body: JSON.stringify({
         title

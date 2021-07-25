@@ -39,7 +39,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     });
 
     if (!tasksData) {
-      res.status(404).json({ message: 'Sorry! We could not find any tasks this id!' });
+      res.status(404).json({ message: 'Fail! No Tasks here!' });
       return;
     }
 
@@ -49,25 +49,4 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
-router.put('/:id', withAuth, async (req, res) => {
-  try {
-    const taskUpdate = await Tasks.update({
-      title: req.body.title,
-      task_content: req.body.task_content
-    },
-      {
-        where: {
-          id: req.params.id
-        }
-      });
-
-    if (!taskUpdate) {
-      res.status(404).json({ message: 'Sorry! We could not find any tasks this id!' });
-      return;
-    }
-    res.json(taskUpdate);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 module.exports = router;

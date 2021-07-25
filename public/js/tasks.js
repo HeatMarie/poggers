@@ -23,4 +23,4 @@ const taskHandler = async (event) => {
   
   document
     .querySelector('.task')
-    .addEventListener('click', taskHandler);
+    .addEventListener('submit', taskHandler);

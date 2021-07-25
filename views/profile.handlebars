@@ -1,25 +1,74 @@
-<div class="row">
+<div class="col-3 profile">
   <div class="col-auto">
     <h2>Welcome, {{username}}!</h2>
   </div>
 </div>
 
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>What Game are you working on?</h3>
 
-    <form class="form new-game-form">
 
-      <div class="form-group">
-        <label for="game-name">Game name:</label>
-        <input class="form-input" type="text" id="game-name" name="game-name" />
-      </div>
 
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Add</button>
-      </div>
-    </form>
+<div class="moveIt">
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Add Game</button>
+{{!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop">Enable backdrop (default)</button> --}}
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Search Games</button>
+
+
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Colored with scrolling</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
+
+  <div class="offcanvas-body">
+
+    <div class="">
+      <h3>What Game are you working on?</h3>
+
+      <form class="form new-game-form">
+
+        <div class="form-group">
+          <label for="game-name">Game name:</label>
+          <input class="form-input" type="text" id="game-name" name="game-name" />
+        </div>
+
+        <div class="task-content">
+            <label for="task-content">Task</label>
+            <input class="form-input" type="text" id="task-name" name="task-name">
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdroped with scrolling</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  
+  <div class="offcanvas-body">
+    <h3>Search Games</h3>
+    <div class="input-group flex-nowrap">
+  <span class="input-group-text" id="addon-wrapping"><i class="fas fa-search"></i></span>
+  <input type="text" class="form-control" placeholder="Search Games" aria-label="Username" aria-describedby="addon-wrapping">
+</div>
+  </div>
+</div>
+
+</div>
+
+
+
+<div class="row mt-4">
+  
   
 
   {{#if games.length}}
@@ -45,3 +94,10 @@
 <script src="/js/add-game.js"></script>
 <script src="/js/delete-game.js"></script>
 
+<script>
+var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+  return new bootstrap.Popover(popoverTriggerEl)
+})
+
+</script>

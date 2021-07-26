@@ -1,14 +1,17 @@
 async function taskFormHandler(event) {
   event.preventDefault();
 
-  const id = document.querySelector('#task-desc').value;
+  const content = document.getElementById('task-desc').value;
+  const id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
+
+
+
   
     const response = await fetch(`/api/tasks/${id}`, {
       method: 'POST',
       body: JSON.stringify({
-        task_id,
-        description,
-        task_content
+        content,
+        id
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -22,4 +25,4 @@ async function taskFormHandler(event) {
     }
   }
 
-document.querySelector('.task-form').addEventListener('click', taskFormHandler);
+document.getElementById('task-form').addEventListener('click', taskFormHandler);

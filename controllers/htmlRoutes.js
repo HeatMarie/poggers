@@ -91,16 +91,22 @@ router.get('/tasks/:id', async (req, res) => {
         {
           model: User,
           attributes: ['username'],
+
+        },
+        {
           model: Tasks,
-          attributes: ['description']
+          attributes: ['description', 'task_id', 'description', 'task_content']
           
         },
       ],
     });
     console.log("DO THESE?", gameData);
-    const post = gameData.get({ plain: true });
+    const game = gameData.get({ plain: true });
     res.render('tasks', {
-      ...post,
+      game,
+      task_id,
+      description,
+      task_content,
       logged_in: req.session.logged_in
     });
   } catch (err) {

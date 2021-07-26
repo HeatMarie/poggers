@@ -1,4 +1,4 @@
-const nodemailer = require("nodemailer");
+/* const nodemailer = require("nodemailer");
 
 // async..await is not allowed in global scope, must use a wrapper
 async function main(username, userEmail) {
@@ -45,4 +45,4 @@ async function main(username, userEmail) {
   // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
 }
 
-main().catch(console.error);
+main().catch(console.error); */

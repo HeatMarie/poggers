@@ -1,18 +1,17 @@
 async function taskFormHandler(event) {
   event.preventDefault();
 
-  const task_content = document.querySelector('textarea[name="task_content]').value.trim();
+  const content = document.getElementById('task-desc').value;
+  const id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
 
-  const task_id = window.location.toString().split('/')[
-    window.location.toString().split('/').length - 1
-  ];
 
-  if (task_content) {
-    const response = await fetch('/api/tasks', {
+
+  
+    const response = await fetch(`/api/tasks/${id}`, {
       method: 'POST',
       body: JSON.stringify({
-        task_id,
-        task_content
+        content,
+        id
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -20,11 +19,10 @@ async function taskFormHandler(event) {
     });
 
     if (response.ok) {
-      document.location.reload();
+      document.location.replace('/game');
     } else {
       alert(response.statusText);
     }
   }
-}
-//maybe change .task-form depending on handlebars
-document.querySelector('.task-form').addEventListener('click', taskFormHandler);
+
+document.getElementById('task-form').addEventListener('click', taskFormHandler);

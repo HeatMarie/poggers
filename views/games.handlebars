@@ -5,15 +5,13 @@
     <br>
     <h3>Add Task</h3>
 
-    <form class="form task-form">
+    <form class="form task-form" id="task-form">
       
       <div class="form-group">
         <label for="task">Task Title:</label>
-        <input class="form-input" type="text" id="task_desc" name="task_content" />
+        <input class="form-input" type="text" id="task-desc" name="task_content" />
         <p>Task Description</p>
         <textarea name="task_content" cols="30" rows="10"></textarea>
-      </div>
-      <div class="form-group task">
         <button type="submit" class="btn btn-primary">Add</button>
       </div>
     </form>
@@ -39,3 +37,4 @@
   {{/if}}
 </div>
 
+<script src="/js/add-task.js"></script>

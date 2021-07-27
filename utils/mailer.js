@@ -32,8 +32,6 @@ let transporter = nodemailer.createTransport({
   };
 
 // COME BACK TO PUT LINK TO LIVE SITE ^^^^^^ //
-  console.log("Holy crap you sent an email", info.messageId);
-
 transporter.sendMail(info, function(err, info) {
   if(err){
     console.log(err);

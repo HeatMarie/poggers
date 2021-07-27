@@ -34,7 +34,6 @@ router.get('/game/:id', async (req, res) => {
         {
           model: User,
           attributes: ['username']
-          
         },
       ],
     });
@@ -50,7 +49,7 @@ router.get('/game/:id', async (req, res) => {
       },
     ],
   });
-    console.log(tasks.map(i => i.get({ plain: true })));
+    console.log(tasks, "This is where tasks are written to");
 
     res.render('games', {
       ...games,
@@ -73,7 +72,6 @@ router.get('/profile', withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
-console.log(user);
     res.render('profile', {
       ...user,
       logged_in: true
@@ -85,22 +83,20 @@ console.log(user);
 
 router.get('/tasks/:id', async (req, res) => {
   try {
-    console.log("id", req.params.id);
+    console.log("This is where we should see the tasks' id", req.params.id);
     const gameData = await Games.findByPk(req.params.id, {
       include: [
         {
           model: User,
-          attributes: ['username'],
-
+          attributes: ['username', 'id'],
         },
         {
           model: Tasks,
-          attributes: ['description', 'task_id', 'description', 'task_content']
+          attributes: ['description', 'task_id', 'task_content']
           
         },
       ],
     });
-    console.log("DO THESE?", gameData);
     const game = gameData.get({ plain: true });
     res.render('tasks', {
       game,
@@ -110,7 +106,6 @@ router.get('/tasks/:id', async (req, res) => {
       logged_in: req.session.logged_in
     });
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });

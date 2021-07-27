@@ -1,15 +1,15 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Tasks extends Model{}
+class Tasks extends Model { }
 
 Tasks.init(
     {
         id:{
-            type:DataTypes.INTEGER,
-            allowNull:false,
-            primaryKey:true,
-            autoincrement:true
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoincrement: true
         },
         user_id: {
             type: DataTypes.INTEGER,
@@ -34,7 +34,8 @@ Tasks.init(
             allowNull:true
         },
         description: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            allowNull: false,
         },
         task_content:{
             type:DataTypes.TEXT,

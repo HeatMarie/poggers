@@ -49,7 +49,11 @@ router.get('/game/:id', async (req, res) => {
       },
     ],
   });
+
+    // console.log(tasks.map(i => i.get({ plain: true })));
+
     console.log(tasks, "This is where tasks are written to");
+
 
     res.render('games', {
       ...games,
@@ -72,6 +76,9 @@ router.get('/profile', withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
+
+// console.log(user);
+
     res.render('profile', {
       ...user,
       logged_in: true
@@ -81,34 +88,80 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
+
 router.get('/tasks/:id', async (req, res) => {
   try {
-    console.log("This is where we should see the tasks' id", req.params.id);
-    const gameData = await Games.findByPk(req.params.id, {
+    console.log("Well, then");
+    const gameData = await Game.findByPk(req.params.id, {
       include: [
         {
           model: User,
-          attributes: ['username', 'id'],
-        },
+          attributes: ['username']
+        }
+      ]
+    });
+
+    if(!gameData) {
+      res.status(404).json({ message: 'Nothing found with this id'});
+      return;
+    }
+    const game = await gameData.get({ plain: true });
+
+    const taskData = await Tasks.findAll({
+      include: [
         {
-          model: Tasks,
-          attributes: ['description', 'task_id', 'task_content']
-          
-        },
-      ],
+        model: User,
+        attributes: ['username']
+        }
+      ]
     });
-    const game = gameData.get({ plain: true });
-    res.render('tasks', {
+
+    const tasks = await taskData.map((task) => task.get({ plain: true }));
+
+    res.render('tasks'), {
+      tasks,
       game,
-      task_id,
-      description,
-      task_content,
       logged_in: req.session.logged_in
-    });
+    }
   } catch (err) {
-    res.status(500).json(err);
+
+    console.log(err);
+    res.status(500).json(err)
+
   }
-});
+})
+
+// router.get('/tasks/:id', async (req, res) => {
+//   try {
+//     console.log("id", req.params.id);
+//     const gameData = await Games.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['username'],
+
+//         },
+//         {
+//           model: Tasks,
+//           attributes: ['description', 'task_id', 'description', 'task_content']
+          
+//         },
+//       ],
+//     });
+//     console.log("DO THESE?", gameData);
+//     const game = gameData.get({ plain: true });
+//     res.render('tasks', {
+//       game,
+//       task_id,
+//       description,
+//       task_content,
+//       logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route

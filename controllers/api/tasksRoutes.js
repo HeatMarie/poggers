@@ -16,13 +16,12 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 
-router.post('/tasks/:id', withAuth, async (req, res) => {
+router.post('/add', withAuth, async (req, res) => {
   try {
-    const newTask = await Tasks.create({
-      ...req.body,
-      user_id: req.session.user_id,
-      tasks_id: req.params.tasks_id
-    });
+    console.log(req.body);
+    const newTask = await Tasks.create(
+      req.body
+    );
     console.log("New", newTask);
     res.status(200).json(newTask);
   } catch (err) {

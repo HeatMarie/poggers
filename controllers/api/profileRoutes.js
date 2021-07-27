@@ -1,18 +1,18 @@
 const router = require('express').Router();
 const { User } = require('../../models');
-const main = require('../../public/js/mailer');
+const sendemail = require('../../utils/mailer');
 
 router.post('/signup', async (req, res) => {
   try {
     const userData = await User.create(req.body);
+    sendemail(req.body.email, req.body.username);
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-
-      // main.main(username, userEmail);
       res.redirect("/profile");
     });
   } catch (err) {
+    console.log("this is where we are")
     // if (err == UniqueConstraintError) {
     //   res
     //     .status(400)

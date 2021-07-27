@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Games } = require('../../models');
+const { Games, Tasks } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {

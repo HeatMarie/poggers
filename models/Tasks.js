@@ -19,9 +19,11 @@ Tasks.init(
                 key: 'id'
             }
         },
+
+        //I CHANGED THIS FROM FALSE//
         game_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
             references: {
                 model: 'games',
                 key: 'id'

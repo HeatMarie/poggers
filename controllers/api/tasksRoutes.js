@@ -25,8 +25,7 @@ router.post('/', withAuth, async (req, res) => {
     const task = await Tasks.create({
       description: req.body.content,
       game_id: req.body.id,
-
-
+      title: req.body.title,
       user_id: req.session.user_id,
     });
 

@@ -15,7 +15,7 @@ const loginFormHandler = async (e) => {
         if (response.ok) {
             document.location.replace('/profile');
         } else {
-            alert(response.statusText);
+            alert(response.statusText, "Error signing in");
         }
     }
 };
@@ -26,7 +26,6 @@ const signupFormHandler = async (e) => {
     const username = document.getElementById('name-signup').value.trim();
     const email = document.getElementById('email-signup').value.trim();
     const password = document.getElementById('password-signup').value.trim();
-
     if (username && email && password) {
         const response = await fetch('/api/profile/signup', {
             method: 'POST',
@@ -36,7 +35,7 @@ const signupFormHandler = async (e) => {
         if (response.ok) {
             document.location.replace('/profile');
         } else {
-            alert(response.statusText);
+            alert(response.statusText, "You already used this!");
         }
     }
 };

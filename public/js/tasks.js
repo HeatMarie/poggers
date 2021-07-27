@@ -15,7 +15,7 @@ const taskHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/');
       } else {
-        console.log(description);
+        console.log("This is what a task description should say", description);
         alert('Failed to post task');
       }
     }

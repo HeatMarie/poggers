@@ -3,9 +3,9 @@ async function logout() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' }
     });
-  
     if (response.ok) {
       document.location.replace('/login');
+      console.log("YOU LEFT!!!!")
     } else {
       alert(response.statusText);
     }

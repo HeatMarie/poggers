@@ -34,7 +34,6 @@ router.get('/game/:id', async (req, res) => {
         {
           model: User,
           attributes: ['username']
-          
         },
       ],
     });
@@ -50,7 +49,11 @@ router.get('/game/:id', async (req, res) => {
       },
     ],
   });
+
     // console.log(tasks.map(i => i.get({ plain: true })));
+
+    console.log(tasks, "This is where tasks are written to");
+
 
     res.render('games', {
       ...games,
@@ -73,7 +76,9 @@ router.get('/profile', withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
+
 // console.log(user);
+
     res.render('profile', {
       ...user,
       logged_in: true
@@ -119,8 +124,10 @@ router.get('/tasks/:id', async (req, res) => {
       logged_in: req.session.logged_in
     }
   } catch (err) {
+
     console.log(err);
     res.status(500).json(err)
+
   }
 })
 

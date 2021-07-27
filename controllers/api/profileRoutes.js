@@ -12,7 +12,6 @@ router.post('/signup', async (req, res) => {
       res.redirect("/profile");
     });
   } catch (err) {
-    console.log("this is where we are")
     // if (err == UniqueConstraintError) {
     //   res
     //     .status(400)
@@ -41,7 +40,6 @@ router.post('/login', async (req, res) => {
       res
         .status(400)
         .json({ message: 'Incorrect email or password, please try again' });
-      console.log(req, "WE are over here now! MEOW")
       return;
     }
 
@@ -54,7 +52,6 @@ router.post('/login', async (req, res) => {
     });
     
   } catch (err) {
-    console.log(req, "WE are over here now! BARK")
     res.status(400).json(err);
   }
 });

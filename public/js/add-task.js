@@ -1,19 +1,19 @@
 async function taskFormHandler(event) {
   event.preventDefault();
-  const content = document.getElementById('taskDesc').value;
-
+  const title = document.getElementById('taskDesc').value;
+  const content = document.getElementById('taskContent').value;
   const id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
 
-  if(content) {
+  if(title) {
     const response = await fetch(`/api/tasks`, {
       method: 'POST',
       //THIS is missing data entry//
-      body: JSON.stringify({ content, id }),
+      body: JSON.stringify({ title, content, id }),
       headers: {
         'Content-Type': 'application/json'
       },
     });
-
+    console.log(title, content, id);
     if (response.ok) {
       document.location.reload();
       console.log('click');

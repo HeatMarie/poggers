@@ -37,10 +37,10 @@ Tasks.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        task_content:{
-            type:DataTypes.TEXT,
-            allowNull:true,
-        }
+        // task_content:{
+        //     type:DataTypes.TEXT,
+        //     allowNull:true,
+        // }
     },
     {
         sequelize,

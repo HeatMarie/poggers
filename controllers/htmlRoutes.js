@@ -58,7 +58,7 @@ router.get('/game/:id', async (req, res) => {
     res.render('games', {
       ...games,
       tasks: tasks.map(i => i.get({ plain: true })),
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     console.log(err);

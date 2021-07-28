@@ -39,7 +39,9 @@ router.get('/game/:id', async (req, res) => {
     });
 
     const games = gameData.get({ plain: true });
+
     console.log(req.params.id)
+
     const tasks = await Tasks.findAll({where: {game_id: req.params.id}, 
       include: [
       {
@@ -49,8 +51,6 @@ router.get('/game/:id', async (req, res) => {
       },
     ],
   });
-
-    // console.log(tasks.map(i => i.get({ plain: true })));
 
     console.log(tasks, "This is where tasks are written to");
 
@@ -131,37 +131,36 @@ router.get('/tasks/:id', async (req, res) => {
   }
 })
 
-// router.get('/tasks/:id', async (req, res) => {
-//   try {
-//     console.log("id", req.params.id);
-//     const gameData = await Games.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['username'],
-
-//         },
-//         {
-//           model: Tasks,
-//           attributes: ['description', 'task_id', 'description', 'task_content']
+router.get('/tasks/:id', async (req, res) => {
+  try {
+    console.log("id", req.params.id);
+    const gameData = await Games.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+        {
+          model: Tasks,
+          attributes: ['description', 'task_id', 'task_content']
           
-//         },
-//       ],
-//     });
-//     console.log("DO THESE?", gameData);
-//     const game = gameData.get({ plain: true });
-//     res.render('tasks', {
-//       game,
-//       task_id,
-//       description,
-//       task_content,
-//       logged_in: req.session.logged_in
-//     });
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
+        },
+      ],
+    });
+    console.log("DO THESE?", gameData);
+    const game = gameData.get({ plain: true });
+    res.render('tasks', {
+      game,
+      task_id,
+      description,
+      task_content,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route

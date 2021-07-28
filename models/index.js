@@ -11,11 +11,11 @@ Games.belongsTo(User,{
 });
 
 Tasks.belongsTo(Games, {
-    foreignKey:'games_id',
+    foreignKey:'game_id',
 });
 
 Games.hasMany(Tasks, {
-    foreignKey: 'games_id',
+    foreignKey: 'game_id',
     onDelete: "CASCADE"
 });
 

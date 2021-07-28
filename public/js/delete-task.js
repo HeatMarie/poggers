@@ -24,6 +24,8 @@
 // }
 
 console.log("LOADED");
+const dateNow = new Date().toLocaleString();
+console.log(dateNow);
 
 const deleteTaskHandler = async (event) => {
   if (event.target.classList.contains("task-delete") && event.target.hasAttribute('data-id')) {

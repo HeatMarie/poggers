@@ -42,6 +42,10 @@ header,
   text-decoration: underline;
 } 
 
+.poglogo {
+  margin-top: -10px;
+}
+
 
 
 /* Login CSS */

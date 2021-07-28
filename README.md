@@ -44,6 +44,7 @@ What are the steps required to install your project? Provide a step-by-step desc
   - [Chris Beard:](https://github.com/cbeard22)
   
 - For this project we utilized:
+    - Bcrypt
     - Node.js
     - NPM
     - mysql2 Node Module

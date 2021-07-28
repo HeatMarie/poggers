@@ -7,7 +7,6 @@ async function taskFormHandler(event) {
   if(title) {
     const response = await fetch(`/api/tasks`, {
       method: 'POST',
-      //THIS is missing data entry//
       body: JSON.stringify({ title, content, id }),
       headers: {
         'Content-Type': 'application/json'

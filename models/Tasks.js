@@ -19,8 +19,6 @@ Tasks.init(
                 key: 'id'
             }
         },
-
-        //I CHANGED THIS FROM FALSE//
         game_id: {
             type: DataTypes.INTEGER,
             allowNull: true,
@@ -37,10 +35,6 @@ Tasks.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        // task_content:{
-        //     type:DataTypes.TEXT,
-        //     allowNull:true,
-        // }
     },
     {
         sequelize,

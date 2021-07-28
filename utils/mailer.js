@@ -32,6 +32,7 @@ let transporter = nodemailer.createTransport({
   };
 
 // COME BACK TO PUT LINK TO LIVE SITE ^^^^^^ //
+
 transporter.sendMail(info, function(err, info) {
   if(err){
     console.log(err);

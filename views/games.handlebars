@@ -24,7 +24,9 @@
     {{#each tasks as |task|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/tasks/{{task.id}}">{{task.task_content}}</a></h4>
+        <h3>{{task.title}}</a></h3>
+        <p>{{task.description}}</p>
+
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger task-delete" data-id="{{task.id}}">DELETE</button>

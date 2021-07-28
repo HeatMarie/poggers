@@ -39,8 +39,8 @@ router.get('/game/:id', async (req, res) => {
     });
 
     const games = gameData.get({ plain: true });
-
-    const tasks = await Tasks.findAll({where: {games_id: req.params.id}, 
+    console.log(req.params.id)
+    const tasks = await Tasks.findAll({where: {game_id: req.params.id}, 
       include: [
       {
         model: User,

@@ -1,31 +1,76 @@
+<h2 class="gameHeader">{{ title }} </h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <div class="row mt-4">
   <div class="col-md-6">
-    <h1>Game: {{title}}</h1>
-    <br>
-    <h3>Add Task</h3>
+    <h3>Current Tasks:</h3>
 
-    <form class="form task-form" id="task-form">
-      
-      <div class="form-group">
-        <label for="task">Task Title:</label>
-        <input class="form-input" type="text" id="taskDesc" name="task_desc" />
-        <p>Task Description</p>
-        <textarea id='taskContent' name="task_content" cols="30" rows="10"></textarea>
-        <button type="submit" class="btn btn-primary" id="taskSubmit">Add</button>
+
+
+<div class="add-game-btn">
+  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Add Task</button>
+
+
+
+  <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Colored with scrolling</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <div class="offcanvas-body">
+
+      <div class="">
+        <h3>Add tasks for {{ title }} </h3>
+          <form class="form task-form" id="task-form">
+        
+            <div class="form-group">
+              <label for="task">Task Title:</label>
+              <input class="form-input" type="text" id="taskDesc" name="task_desc" />
+            
+              <p>Task Description</p>
+              <textarea id='taskContent' name="task_content" cols="30" rows="10"></textarea>
+              <button type="submit" class="btn btn-primary" id="taskSubmit">Add</button>
+            </div>
+          </form>
       </div>
-    </form>
+    </div>
+
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
   </div>
 
   {{#if tasks.length}}
   <div class="col-md-6 task-list">
-    <h3>Current Tasks:</h3>
+
 
     {{#each tasks as |task|}}
     <div class="row mb-2">
       <div class="col-md-8">
         <h3>{{task.title}}</a></h3>
-        <p>{{task.description}}</p>
+        <p class="taskDesc">{{task.description}}</p>
         <p class="timestamp">created on: {{task.createdAt}}</p>
       </div>
       <div class="col-md-4">

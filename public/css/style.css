@@ -42,7 +42,14 @@ header,
   text-decoration: underline;
 } 
 
+.poglogo {
+  margin-top: -10px;
+}
 
+.timestamp {
+  font-size: smaller;
+  margin-top: -10px;
+}
 
 /* Login CSS */
 

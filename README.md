@@ -21,11 +21,20 @@ What are the steps required to install your project? Provide a step-by-step desc
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+-First follow the live link to the deployed site at the top of this README.md.
+
+-Then you will be asked to sign up. The first time you sign up you will automatically be brought to the games page and you will not need to login after you sign up. However, when you log in the next time you will need to choose log in and not sign up. 
+
+![Screenshot of login/sign-up page](./images/loginScreenshot.png)
+
+-Now that you are logged in, you can begin to entering in the game title. This is where you will add all of the games you want to track.
+
+![Screenshot of Games page](./images/gamesScreenshot.png)
+
+-Once you have added a game you can click on the game title and this is where you will add the tasks you want to complete. The tasks will then be stored to the right with a timestamp of the date you added the task. When you are done with a task you can delete it and add another task. 
+
+    ![Screenshot of Tasks page](./images/addTaskScreenshot.png)
+
 ## Credits
 
 - Collaborators:
@@ -35,6 +44,7 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
   - [Chris Beard:](https://github.com/cbeard22)
   
 - For this project we utilized:
+    - Bcrypt
     - Node.js
     - NPM
     - mysql2 Node Module
@@ -58,10 +68,6 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-## Features
-
-If your project has a lot of features, list them here.
 
 ## Contributing
 

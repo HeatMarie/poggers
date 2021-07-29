@@ -17,7 +17,21 @@ This application provides a helping hand for the ultimate gamer to keep track of
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+Make sure you have a code editor, terminal of your choosing installed on your local computer.
+
+Install npm and Node.js on your local computer.
+
+Install Git and Github on your local computer and register to get an account.
+
+Install MySql and MySql Workbench on your local computer. 
+
+Clone or Fork this repository: (https://github.com/HeatMarie/poggers.git)
+
+After cloning the repository to your local computer:
+- Initialize npm 
+- Install bcrypt, connect-session-sequelize, dotenv, express, express-handlebars, express-session, mysql2, node-fetch, node-mailer, and sequelize node modules.
+
+You can then deploy this to Heroku or you can run it on your local computer.
 
 ## Usage
 

@@ -1,6 +1,6 @@
 # Poggers
 
-Live Deployed Link: https://poggers-pog.herokuapp.com/
+Live Deployed Link: https://poggers-pog.herokuapp.com/login
 
 ## Description
 
@@ -33,7 +33,7 @@ What are the steps required to install your project? Provide a step-by-step desc
 
 -Once you have added a game you can click on the game title and this is where you will add the tasks you want to complete. The tasks will then be stored to the right with a timestamp of the date you added the task. When you are done with a task you can delete it and add another task. 
 
-    ![Screenshot of Tasks page](./images/addTaskScreenshot.png)
+![Screenshot of Tasks page](./images/addTaskScreenshot.png)
 
 ## Credits
 

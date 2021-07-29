@@ -8,6 +8,19 @@
   --theGrey: #ffffffd0;
 }
 
+/* Color Classes */
+
+.theBlue {
+  color: var(--theBlue)
+}
+
+.theOrange {
+  color: var(--theOrange)
+}
+
+.theGreen{
+  color: var(--theGreen)
+}
 /* Pogger's heading */
 
 #poggers-heading {
@@ -93,6 +106,33 @@ header,
 .taskDesc {
   color: var(--theGreen)
 }
+
+#contributors{
+  margin-left: 25px;
+}
+.contributor1 {
+  margin-top: 10%;
+  margin-bottom: 5%;
+}
+
+.contributor {
+  margin-top: 7%;
+  margin-bottom: 5%;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#project {
+  margin-top: 20%;
+  margin-bottom: 10%;
+  text-align: center;
+}
+
+
+
 /* @medias */ 
 
 
@@ -112,7 +152,7 @@ header,
 }
 
 
-@media screen and (min-width: 640px) {
+@media screen and (max-width: 640px) {
 
   /* Login @ Media */
 .login-h2 {
@@ -120,20 +160,18 @@ header,
   margin-left: 50px;
 }
 
+
 #login-form, #signup-form {
   margin-left: 50px;
   margin-bottom: 30px;
 }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 790px) {
+  .flex {
+    flex-direction: column;
+  }
+
 
 }
 
-@media screen and (min-width: 992px) {
-
-}
-
-@media screen and (min-width: 1200px) {
-
-}

@@ -27,7 +27,7 @@ let transporter = nodemailer.createTransport({
       <div class="flex-column justify-space-around">
         <header class="display-flex justify-space-between align-center p-2">
           <h1>
-            <a href="/">POGGERS</a>
+            <a href="https://poggers-pog.herokuapp.com/login">POGGERS</a>
           </h1><b>YOU ROCK FOR SIGNING UP!</b>`
   };
 

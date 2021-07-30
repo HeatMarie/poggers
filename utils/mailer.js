@@ -11,7 +11,7 @@ let transporter = nodemailer.createTransport({
 
   let info ={
     from: `poggersPlanOnGaming@outlook.com`, // sender address
-    to: email, // list of receivers
+    to: email, //receiver
     subject: `Welcome ${username} to POG!`, // Subject line
     text: `Congrats you signed up! You rock!`, // plain text body
     html: `<!DOCTYPE html>
@@ -27,11 +27,9 @@ let transporter = nodemailer.createTransport({
       <div class="flex-column justify-space-around">
         <header class="display-flex justify-space-between align-center p-2">
           <h1>
-            <a href="/">POGGERS</a>
+            <a href="https://poggers-pog.herokuapp.com/login">POGGERS</a>
           </h1><b>YOU ROCK FOR SIGNING UP!</b>`
   };
-
-// COME BACK TO PUT LINK TO LIVE SITE ^^^^^^ //
 
 transporter.sendMail(info, function(err, info) {
   if(err){

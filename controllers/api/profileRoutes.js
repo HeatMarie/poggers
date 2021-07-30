@@ -12,14 +12,6 @@ router.post('/signup', async (req, res) => {
       res.redirect("/profile");
     });
   } catch (err) {
-    // if (err == UniqueConstraintError) {
-    //   res
-    //     .status(400)
-    //     .json({ message: 'Oi! I think you have been here before!' });
-    // } else {
-    //   res.status(404).json(err);
-    //   return;
-    // }
     res.status(400).json(err);
   }
 });
